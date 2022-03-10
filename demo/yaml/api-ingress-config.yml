@@ -1,0 +1,11 @@
+apiVersion: configuration.konghq.com/v1
+kind: KongIngress
+metadata:
+  name: api-ingress-config
+route:
+  protocols:
+  - http
+  methods:
+  - GET
+  preserve_host: true
+  strip_path: true
