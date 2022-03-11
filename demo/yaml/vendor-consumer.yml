@@ -4,7 +4,7 @@ metadata:
   name: vendor-consumer
   annotations:
     kubernetes.io/ingress.class: kong
-username: Vendor 1
+username: Vendor A
 custom_id: vendor-a
 credentials:
 - vendor-apikey

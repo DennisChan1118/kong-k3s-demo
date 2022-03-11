@@ -4,5 +4,5 @@ metadata:
   name: ip-restriction-plugin
 config: 
   allow:
-  - 172.20.10.5
+  - 192.168.123.123
 plugin: ip-restriction

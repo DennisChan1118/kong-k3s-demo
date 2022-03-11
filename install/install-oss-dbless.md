@@ -46,7 +46,7 @@ kubectl get all -A
 k4k8s-oss-dbless
 
 ```bash
-kubectl apply -f ./yaml/k4k8s-oss-dbless.yml
+kubectl apply -f ./install/yaml/k4k8s-oss-dbless.yml
 
 kubectl get all -A
 ```
@@ -56,13 +56,13 @@ Test :
 Open a new terminal and start port forwarding
 
 ```bash
-kubectl port-forward -n kong service/kong-proxy 11080:80
+kubectl port-forward -n kong service/kong-proxy 10080:80
 ```
 
 Test connection
 
 ```bash
-curl -i localhost:11080
+curl -i localhost:10080
 ```
 
 You will get a JSON response

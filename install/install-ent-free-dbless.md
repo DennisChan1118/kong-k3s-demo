@@ -46,7 +46,7 @@ kubectl get all -A
 Install Kong Enterprise in Kubernetes with dbless mode
 
 ```bash
-kubectl apply -f ./yaml/k4k8s-ent-free-dbless.yml
+kubectl apply -f ./install/yaml/k4k8s-ent-free-dbless.yml
 
 kubectl get all -A
 ```
@@ -73,14 +73,18 @@ You will get a JSON response
 
 ## Test Kong Manager
 
-Open a new terminal and start port forwarding
+Open a new terminal and start port forwarding for `Kong Admin API`
+
+```bash
+kubectl port-forward -n kong service/kong-admin 18001:8001
+```
+
+Open a new terminal and start port forwarding for `Kong Manager`
 
 ```bash
 kubectl port-forward -n kong service/kong-manager 18002:8002
 ```
 
-Open Kong Manager url in the browser
+Open `Kong Manager` url in the browser
 
 <http://localhost:18002/dashboard>
-
-Login super admin by password created early. You will enter the Kong Manager dashbroad page.

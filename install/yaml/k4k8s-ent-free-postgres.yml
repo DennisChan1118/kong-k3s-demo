@@ -1356,6 +1356,10 @@ spec:
           value: 0.0.0.0:8001
         - name: KONG_ADMIN_GUI_LISTEN
           value: 0.0.0.0:8002
+        - name: KONG_ADMIN_API_URI
+          value: 127.0.0.1:18001
+        - name: KONG_ADMIN_GUI_URL
+          value: "*"
         - name: KONG_DATABASE
           value: postgres
         - name: KONG_PG_HOST
@@ -1540,11 +1544,6 @@ spec:
         - -c
         - kong migrations bootstrap
         env:
-        - name: KONG_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              key: password
-              name: kong-enterprise-superuser-password
         - name: KONG_PG_PASSWORD
           value: kong
         - name: KONG_PG_HOST

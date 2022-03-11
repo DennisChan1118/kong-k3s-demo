@@ -1,10 +1,10 @@
 apiVersion: configuration.konghq.com/v1
 kind: KongIngress
 metadata:
-  name: echo-service-config
+  name: httpbin-service-config
 proxy:
   protocol: http
-  path: /echoserver
+  path: /
   retries: 10
   connect_timeout: 10000
   read_timeout: 10000

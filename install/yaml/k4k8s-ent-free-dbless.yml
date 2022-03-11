@@ -1342,6 +1342,10 @@ spec:
           value: 0.0.0.0:8001
         - name: KONG_ADMIN_GUI_LISTEN
           value: 0.0.0.0:8002
+        - name: KONG_ADMIN_API_URI
+          value: 127.0.0.1:18001
+        - name: KONG_ADMIN_GUI_URL
+          value: "*"
         - name: KONG_DATABASE
           value: "off"
         - name: KONG_NGINX_WORKER_PROCESSES
@@ -1374,17 +1378,17 @@ spec:
           timeoutSeconds: 1
         name: proxy
         ports:
-        - containerPort: 8000
-          name: proxy
-          protocol: TCP
-        - containerPort: 8443
-          name: proxy-ssl
-          protocol: TCP
         - containerPort: 8001
           name: admin
           protocol: TCP
         - containerPort: 8002
           name: manager
+          protocol: TCP
+        - containerPort: 8000
+          name: proxy
+          protocol: TCP
+        - containerPort: 8443
+          name: proxy-ssl
           protocol: TCP
         - containerPort: 8100
           name: metrics
